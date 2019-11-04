@@ -1,0 +1,11 @@
+{
+  "name": "my502",
+  "version": "1.0.0",
+  "description": "Sample app for K8s scale",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Outdam",
+  "license": "ISC"
+}
