@@ -13,7 +13,8 @@ Application starts with port 8080
 ## RUN
 ### With Docker
 ```
-docker run --name node4k8s -p 80:8080 mxadam/node4k8s
+docker build  . -t node4k8s
+docker run --name node4k8s -p 80:8080 node4k8s
 ```
 
 ### Without Docker
