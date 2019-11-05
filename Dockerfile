@@ -1,5 +1,5 @@
-FROM node:latest
+FROM mhart/alpine-node:latest
 
-ADD .
+ADD . /
 
-
+ENTRYPOINT ["npm", "start"]
