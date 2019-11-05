@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node4k8s
+  labels:
+    app: node4k8s
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node4k8s
+  template:
+    metadata:
+      labels:
+        app: node4k8s
+    spec:
+      containers:
+      - image: mxadam/node4k8s
+        name: node4k8s
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 30
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 30
+          periodSeconds: 30
