@@ -1,5 +1,6 @@
 var express = require("express");
 var morgan = require("morgan");
+var ip = require("ip");
 
 var app = express();
 
@@ -21,11 +22,11 @@ app.get("/compute", (req, res, next) => {
 
 
 async function compute(res) {
-  var ms = Math.floor((Math.random() * 5000) + 1);
+  var ms = Math.floor((Math.random() * 3000) + 1);
 
   await sleep(ms);
 
-  res.json("Computed...!");
+  res.json(`Computed on ${ip.address()}`);
 }
 
 function sleep(ms) {
