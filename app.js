@@ -1,17 +1,21 @@
 var express = require("express");
 var app = express();
 
-app.listen(8080, () => {
- console.log("Server running on port 8080");
+const PORT = 8080;
+
+
+app.listen(PORT, () => {
+ console.log(`Server running on port ${PORT}`);
 });
 
 app.get("/health", (req, res, next) => {
   res.json("ok");
-})
+});
 
 app.get("/compute", (req, res, next) => {
   compute(res);
-})
+});
+
 
 async function compute(res) {
   var ms = Math.floor((Math.random() * 5000) + 1);
