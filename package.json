@@ -1,5 +1,5 @@
 {
-  "name": "my502",
+  "name": "node4K8s",
   "version": "1.0.0",
   "description": "Sample app for K8s scale",
   "main": "app.js",
