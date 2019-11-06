@@ -18,18 +18,16 @@ app.get("/health", (req, res, next) => {
 
 app.get("/compute", (req, res, next) => {
   compute(res);
+  res.json(`Computed on ${ip.address()}`);
 });
 
+app.get("/intense", (req, res, next) => {
+	console.time('mySlowFunction');
+	let result = 0;
+	for (var i = Math.pow(6, 7); i >= 0; i--) {
+		result += Math.atan(i) * Math.tan(i);
+	};
+  console.timeEnd('mySlowFunction');
 
-async function compute(res) {
-  var ms = Math.floor((Math.random() * 3000) + 1);
-
-  await sleep(ms);
-
-  res.json(`Computed on ${ip.address()}`);
-}
-
-function sleep(ms) {
-  return new Promise( resolve => setTimeout(resolve, ms) )
-}
-
+  res.send('Intense Get!');
+})
