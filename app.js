@@ -13,7 +13,7 @@ app.listen(PORT, () => {
 });
 
 app.get("/health", (req, res, next) => {
-  res.json("ok");
+  res.json("ok ok");
 });
 
 app.get("/compute", (req, res, next) => {
