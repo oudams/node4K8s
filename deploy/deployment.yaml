@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: outdammeas/node4k8s
+        imagePullPolicy: Always
         name: node4k8s
         ports:
           - containerPort: 8080
