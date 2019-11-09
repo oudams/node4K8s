@@ -15,7 +15,7 @@ spec:
         app: node4k8s
     spec:
       containers:
-      - image: mxadam/node4k8s
+      - image: outdammeas/node4k8s
         name: node4k8s
         ports:
           - containerPort: 8080
